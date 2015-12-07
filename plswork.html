@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Slideout Demo</title>
+    <meta http-equiv="cleartype" content="on">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+  <body>
+
+     <nav id="menu" class="menu">
+
+      <a href="https://www.google.com" target="_blank">
+        <header class="menu-header">
+          <span class="menu-header-title">Username (link to profile? stats?)</span>
+        </header>
+      </a>
+
+      <section class="menu-section">
+        <h3 class="menu-section-title">Type</h3>
+        <ul class="menu-section-list">
+            <li><a href="https://www.google.com" target="_blank">Fashion</a></li>
+          <li><a href="https://www.google.com" target="_blank">Food</a></li>
+            <li><a href="https://www.google.com" target="_blank">Tech</a></li>
+          <li><a href="https://www.google.com" target="_blank">Services</a></li>
+            <li><a href="https://www.google.com" target="_blank">Misc.</a></li>
+        </ul>
+      </section>
+
+      <section class="menu-section">
+        <h3 class="menu-section-title">asdf</h3>
+        <ul class="menu-section-list">
+          <li><a href="https://www.google.com" target="_blank">a</a></li>
+          <li><a href="https://www.google.com" target="_blank">b</a></li>
+          <li><a href="https://www.google.com">c</a></li>
+        </ul>
+      </section>
+
+    </nav>
+
+    <main id="panel">
+      <header class="panel-header">
+        <button type="submit" class="btn-hamburger toggle-button">
+            <img src="images/menu-bar-square-border-512.png" width="30" height="30" alt="submit" />
+        </button>
+          <h1 class="title">Student Discount Guide</h1>
+          <h2 class="subtitle">something about saving cash money hell yeah</h2>
+          <div class="panel-actions">empty div for ... reasons</div>
+      </header>
+    </main>
+
+    <script src="scripts/sw/slideout.min%20copy.js"></script>
+    <script>
+      var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70
+      });
+
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+    </script>
+
+  </body>
+</html>
